@@ -1,0 +1,24 @@
+{
+    "model_name": "Gradient_Boosting",
+    "feature_set": "Experiment_D_Selected",
+    "feature_columns": [
+        "age_years",
+        "gender",
+        "bmi",
+        "ap_hi",
+        "ap_lo",
+        "pulse_pressure",
+        "map",
+        "cholesterol",
+        "gluc",
+        "chol_gluc",
+        "active",
+        "smoke",
+        "age_map",
+        "metabolic_risk_index"
+    ],
+    "test_roc_auc": 0.8025,
+    "test_accuracy": 0.7343,
+    "test_f1": 0.721,
+    "saved_artifact": "models/best_model_pipeline.joblib"
+}
