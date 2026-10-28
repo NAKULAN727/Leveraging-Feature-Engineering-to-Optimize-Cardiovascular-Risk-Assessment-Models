@@ -27,6 +27,7 @@ import numpy as np
 import pandas as pd
 import joblib
 
+from sklearn.base import clone
 from sklearn.model_selection import StratifiedKFold, cross_validate
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
@@ -174,7 +175,7 @@ def run_experiment_pipeline(fast_mode: bool = False) -> pd.DataFrame:
             # Build pipeline: StandardScaler -> Estimator
             pipeline = Pipeline([
                 ("scaler", StandardScaler()),
-                ("classifier", estimator)
+                ("classifier", clone(estimator))
             ])
 
             # 1. Cross-validation on training data to prevent test leakage
@@ -246,7 +247,7 @@ def run_experiment_pipeline(fast_mode: bool = False) -> pd.DataFrame:
             current_score = test_metrics["roc_auc"] or test_metrics["accuracy"]
             if current_score > best_overall_score:
                 best_overall_score = current_score
-                best_pipeline = pipeline
+                best_pipeline = joblib.load(artifact_path)
                 best_model_name = model_name
                 best_feature_set = feat_name
                 best_pipeline_info = {

@@ -402,6 +402,24 @@ elif menu_selection == "5. Prediction Demonstration":
     if predictor is None:
         st.error("Prediction pipeline is not available. Please ensure model training has been completed.")
     else:
+        # Verified Model Performance Benchmark Section
+        meta = predictor.metadata
+        if meta:
+            st.markdown("### 📊 Active Model Verified Performance Benchmark")
+            m_col1, m_col2, m_col3, m_col4 = st.columns(4)
+            with m_col1:
+                st.metric("Deployed Architecture", meta.get("model_name", "Machine Learning Pipeline"))
+            with m_col2:
+                test_acc = meta.get("test_accuracy", 0.0)
+                st.metric("Held-Out Test Accuracy", f"{test_acc * 100:.2f}%")
+            with m_col3:
+                test_roc = meta.get("test_roc_auc", 0.0)
+                st.metric("Held-Out Test ROC-AUC", f"{test_roc:.4f}")
+            with m_col4:
+                st.metric("Evaluation Cohort", "13,901 Test Records")
+            st.caption("ℹ️ *Note: Above metrics represent verified empirical performance evaluated on 13,901 independent, held-out test patients (Stratified 80/20 split), NOT an accuracy score derived from individual patient inputs.*")
+            st.markdown("---")
+
         with st.form("patient_prediction_form"):
             st.subheader("Patient Clinical Profile")
             c1, c2, c3 = st.columns(3)

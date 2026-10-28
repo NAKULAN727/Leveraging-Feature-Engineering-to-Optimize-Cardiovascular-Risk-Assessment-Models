@@ -91,6 +91,18 @@ class CardiovascularPredictor:
                     f"Systolic BP ({raw_input['ap_hi']}) must be strictly higher than Diastolic BP ({raw_input['ap_lo']})."
                 )
 
+    def predict(self, patient_profile: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        Execute prediction pipeline for an individual patient (standard API alias).
+        
+        Args:
+            patient_profile: Dictionary with baseline clinical indicators.
+            
+        Returns:
+            Dictionary containing prediction class, probability estimate, and explanations.
+        """
+        return self.predict_single_patient(patient_profile)
+
     def predict_single_patient(self, patient_profile: Dict[str, Any]) -> Dict[str, Any]:
         """
         Execute prediction pipeline for an individual patient.

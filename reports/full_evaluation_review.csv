@@ -1,0 +1,21 @@
+Classifier,Feature Set,Features,Accuracy (%),Precision (%),Recall (%),F1-Score (%),ROC-AUC,FN (Missed),FP (False Alarm)
+Logistic Regression,Set A: Original,11,72.30%,75.16%,66.54%,70.59%,0.7888,2324,1527
+Decision Tree,Set A: Original,11,73.05%,77.58%,64.77%,70.60%,0.7939,2447,1300
+Random Forest,Set A: Original,11,73.28%,75.84%,68.28%,71.86%,0.8014,2203,1511
+Support Vector Machine (LinearSVC Calibrated),Set A: Original,11,72.25%,75.05%,66.61%,70.58%,0.7886,2319,1538
+XGBoost,Set A: Original,11,73.38%,75.74%,68.74%,72.07%,0.8021,2171,1529
+Logistic Regression,Set B: Derived,14,72.30%,75.19%,66.51%,70.58%,0.7888,2326,1524
+Decision Tree,Set B: Derived,14,72.93%,76.68%,65.85%,70.85%,0.7943,2372,1391
+Random Forest,Set B: Derived,14,73.10%,75.93%,67.59%,71.52%,0.8009,2251,1488
+Support Vector Machine (LinearSVC Calibrated),Set B: Derived,14,72.28%,75.05%,66.67%,70.61%,0.7886,2315,1539
+XGBoost,Set B: Derived,14,73.28%,75.52%,68.81%,72.01%,0.8022,2166,1549
+Logistic Regression,Set C: Full Engineered,20,72.84%,74.84%,68.77%,71.67%,0.7934,2169,1606
+Decision Tree,Set C: Full Engineered,20,72.79%,74.77%,68.73%,71.62%,0.7947,2172,1611
+Random Forest,Set C: Full Engineered,20,73.14%,75.55%,68.35%,71.77%,0.8003,2198,1536
+Support Vector Machine (LinearSVC Calibrated),Set C: Full Engineered,20,72.74%,74.65%,68.81%,71.61%,0.7927,2166,1623
+XGBoost,Set C: Full Engineered,20,73.24%,75.57%,68.62%,71.93%,0.8014,2179,1541
+Logistic Regression,Set D: Selected,14,72.56%,74.55%,68.42%,71.36%,0.7928,2193,1622
+Decision Tree,Set D: Selected,14,72.97%,76.18%,66.78%,71.17%,0.7942,2307,1450
+Random Forest,Set D: Selected,14,73.22%,75.62%,68.47%,71.87%,0.7995,2190,1533
+Support Vector Machine (LinearSVC Calibrated),Set D: Selected,14,72.58%,74.50%,68.61%,71.43%,0.7923,2180,1631
+XGBoost,Set D: Selected,14,73.25%,75.47%,68.83%,71.99%,0.8022,2165,1554
